@@ -1,7 +1,8 @@
 //import { Auth, Button, IconLogOut } from "@supabase/ui";
 "use client";
 import { Auth } from "@supabase/auth-ui-react";
-import { Logout } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { LogOut } from "lucide-react";
 import { EditProfile } from "@/components/EditProfile";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -28,12 +29,8 @@ export const AuthLayout = (props: Props) => {
                 </div>
                 <div>{props.children}</div>
                 <div className="flex justify-end mx-2 my-4">
-                  <Button
-                    size="medium"
-                    icon={<LogOut />}
-                    onClick={() => client.auth.signOut()}
-                  >
-                    Sign out
+                  <Button variant="destructive">
+                    <LogOut className="mr-2 h-4 w-4" /> ログアウト
                   </Button>
                 </div>
               </div>

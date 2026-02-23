@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-//import { User } from "@supabase/gotrue-js";
-import type { User } from '@supabase/gotrue-js';
+import { User } from "@supabase/gotrue-js";
+//import type { User } from '@supabase/gotrue-js';
 //import { Button, IconSave, IconX } from "@supabase/ui";
 import { Button } from "@/components/ui/button";
 import { Save, X } from "lucide-react";
@@ -192,27 +192,13 @@ export const EditProfile = (props: Props) => {
                 </div>
                 <div className="flex justify-center mt-4">
                   <div className="w-32 p-2">
-                    <Button
-                      block
-                      type="default"
-                      size="large"
-                      icon={<X />}
-                      onClick={() => {
-                        getUserInfo();
-                        closeModal();
-                      }}
-                    >
-                      Cancel
+                    <Button variant="ghost" size="icon">
+                      <X className="h-4 w-4" />
                     </Button>
                   </div>
                   <div className="w-32 p-2">
-                    <Button
-                      block
-                      size="large"
-                      icon={<Save />}
-                      onClick={handleSave}
-                    >
-                      Save
+                    <Button variant="outline">
+                      <Save className="mr-2 h-4 w-4" /> 保存
                     </Button>
                   </div>
                 </div>
