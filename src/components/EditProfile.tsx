@@ -34,13 +34,14 @@ export const EditProfile = (props: Props) => {
       setEditName(userInfo.name);
       setIconExists(userInfo.icon);
       if (uid && userInfo.icon) {
-        const { error, signedURL } = await client
+        const { error, data } = await client
           .storage
           .from("avatar")
           .createSignedUrl("private/" + uid + ".jpg", 600);
-        if (!error) {
-          setIcon(signedURL);
-          setPreviewIcon(signedURL);
+        if (!error && data) {
+          const url = data.signedUrl;
+          setIcon(url);
+          setPreviewIcon(url);
         }
       }
     }
