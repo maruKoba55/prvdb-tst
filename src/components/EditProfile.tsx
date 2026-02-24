@@ -195,12 +195,17 @@ export const EditProfile = (props: Props) => {
                 <div className="flex justify-center mt-4">
                   <div className="w-32 p-2">
                     <Button variant="ghost" size="icon">
-                      <X className="h-4 w-4" />
+                      <X className="h-4 w-4" /> Cancel
+                      onClick={() => {
+                        getUserInfo();
+                        closeModal();
+                      }}
                     </Button>
                   </div>
                   <div className="w-32 p-2">
                     <Button variant="outline">
-                      <Save className="mr-2 h-4 w-4" /> 保存
+                      <Save className="mr-2 h-4 w-4" /> Save
+                      onClick={handleSave}
                     </Button>
                   </div>
                 </div>
