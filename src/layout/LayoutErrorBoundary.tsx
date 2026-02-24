@@ -6,7 +6,7 @@ const ErrorFallback = (props: FallbackProps) => {
   return (
     <div>
       <p>Something went wrong:</p>
-      <pre>{props.error instanceof Error ? props.error.message :}</pre>
+      <pre>{props.error instanceof Error ? props.error.message : ""}</pre>
     </div>
   );
 };
