@@ -3,9 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Button } from "@/components/ui/button";
 import { Plus, X } from "lucide-react";
 import Image from "next/image";
-import add from "public/add.png";
 import { Fragment, useCallback, useState } from "react";
-import { client } from "src/libs/supabase";
+import { client } from "@/lib/supabaseClient";
 
 type Props = {
   uuid: string;
@@ -52,7 +51,7 @@ export const AddTitle = (props: Props) => {
     <>
       <div className="p-2 border cursor-pointer" onClick={openModal}>
         <div className="flex justify-center">
-          <Image src={add} alt="thumbnail" width={126} height={200} />
+          <Image src="/images/add.png" alt="thumbnail" width={126} height={200} />
         </div>
         <div className="mt-2 text-center">ADD NEW</div>
       </div>
@@ -109,22 +108,21 @@ export const AddTitle = (props: Props) => {
                 <div className="flex justify-center mt-4">
                   <div className="w-32 p-2">
                     <Button
-                      block
-                      type="default"
-                      size="large"
-                      icon={<IconX />}
+                      variant="outline"
+                      size="lg"
                       onClick={closeModal}
                     >
+                      <X className="h-4 w-4" />
                       Cancel
                     </Button>
                   </div>
                   <div className="w-32 p-2">
                     <Button
-                      block
-                      size="large"
-                      icon={<IconPlus />}
+                      variant="outline"
+                      size="lg"
                       onClick={() => handleAdd(props.uuid)}
                     >
+                      <Plus className="mr-2 h-4 w-4" />
                       Add
                     </Button>
                   </div>

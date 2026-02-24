@@ -1,4 +1,3 @@
-//import { Auth, Button, IconLogOut } from "@supabase/ui";
 "use client";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from '@supabase/auth-ui-shared';
@@ -30,8 +29,12 @@ export const AuthLayout = (props: Props) => {
                 </div>
                 <div>{props.children}</div>
                 <div className="flex justify-end mx-2 my-4">
-                  <Button variant="destructive">
-                    <LogOut className="mr-2 h-4 w-4" /> ログアウト
+                  <Button
+                    variant="outline"
+                    onClick={() => client.auth.signOut()}
+                  >
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Sign out
                   </Button>
                 </div>
               </div>

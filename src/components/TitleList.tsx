@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import noImage from "public/no_image.png";
 import React from "react";
-import { AddTitle } from "src/components/AddTitle";
+import { AddTitle } from "@/components/AddTitle";
 
 export type Title = {
   id: number;
@@ -42,7 +41,7 @@ export const TitleList = (props: TitlesProps) => {
                   />
                 ) : (
                   <Image
-                    src={noImage}
+                    src="/images/no_image.png"
                     alt="thumbnail"
                     width={126}
                     height={200}
