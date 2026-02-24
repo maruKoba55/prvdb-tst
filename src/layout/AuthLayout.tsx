@@ -1,6 +1,7 @@
 //import { Auth, Button, IconLogOut } from "@supabase/ui";
 "use client";
 import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react";
 import { EditProfile } from "@/components/EditProfile";
@@ -40,7 +41,7 @@ export const AuthLayout = (props: Props) => {
                   <Auth
                     supabaseClient={client}
                     providers={["github"]}
-                    socialColors={true}
+                    appearance={{ theme: ThemeSupa }}
                   />
                 </div>
               </div>
