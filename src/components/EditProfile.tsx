@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-//import { User } from "@supabase/gotrue-js";
-import type { User } from '@supabase/gotrue-js';
+import { User } from "@supabase/gotrue-js";
+//import type { User } from '@supabase/gotrue-js';
 //import { Button, IconSave, IconX } from "@supabase/ui";
 import { Button } from "@/components/ui/button";
 import { Save, X } from "lucide-react";
@@ -34,11 +34,11 @@ export const EditProfile = (props: Props) => {
       setEditName(userInfo.name);
       setIconExists(userInfo.icon);
       if (uid && userInfo.icon) {
-        const { error, data } = await client.storage
+        const { error, signedURL } = await client
+          .storage
           .from("avatar")
           .createSignedUrl("private/" + uid + ".jpg", 600);
-        if (!error && data) {
-          const url = data.signedUrl
+        if (!error) {
           setIcon(signedURL);
           setPreviewIcon(signedURL);
         }
