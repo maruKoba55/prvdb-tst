@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { User } from "@supabase/gotrue-js";
-//import type { User } from '@supabase/gotrue-js';
+//import { User } from "@supabase/gotrue-js";
+import { User } from '@supabase/supabase-js';
 //import { Button, IconSave, IconX } from "@supabase/ui";
 import { Button } from "@/components/ui/button";
 import { Save, X } from "lucide-react";
